@@ -17,13 +17,12 @@ from cozmo.util import degrees, distance_mm
 from colors import Colors
 from woc import WOC
 
-#we shouldn't need these for this demonstration
 #import _thread
 #import time
 
 def moveInCircle(robot, speed, seconds):
 
-	robot.say_text("I will spin in a circle").wait_for_completed()
+	robot.say_text("I will spin in three circles").wait_for_completed()
 	robot.set_all_backpack_lights(Colors.BLUE)
 	#the first value is the speed for one of the treads, and the second value
 	#is the speed for the other tread (left? right?).  They can both be
