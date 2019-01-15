@@ -9,14 +9,13 @@ This is a demo for Cozmo movement, speech, and animations.  Read through the sam
         iv.	Perform a behavior
         
     b.	Challenges (students form 5 groups...when you write your programs, be sure to document what "one unit" is!):
-        i.	Variation 1:
-            1.	Cozmo is at (0,0) and moves to (x,y) moving vertically, then horizontally, and then performs an animation
-            2.	Cozmo is at (a,b) and moves to (x,y) moving vertically, then horizontally, and then performs an animation
-            
-        ii.	Variation 2:
+    
+        ii.	Variation 1:
+            1.  Cozmo is at (0,0) and moves to (x,y) moving vertically, then horizontally, and then performs an animation
+            2.  Cozmo is at (a,b) and moves to (x,y) moving vertically, then horizontally, and then performs an animation
+        ii. Variation 2:
             1.	Cozmo is at (0,0) and moves to (x,y) moving horizontally, then vertically, and then performs an animation
-            2.	Cozmo is at (a,b) and moves to (x,y) moving horizontally, then vertically, and then performs an animation
-            
+            2.	Cozmo is at (a,b) and moves to (x,y) moving horizontally, then vertically, and then performs an animation            
         iii.	Variation 3:
             1.	Cozmo is at (0,0) and moves to (x,y) alternating one unit vertically and then one unit horizontally until it can only move  vertically or horizontally, and then performs an animation
             2.	Cozmo is at (a,b) and moves to (x,y) alternating one unit vertically and then one unit horizontally until it can only move vertically or horizontally, and then performs an animation
