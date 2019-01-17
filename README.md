@@ -1,8 +1,6 @@
-# Cozmo-Movement-Demo
+# Cozmo-Movement-Demo: Variation 2
 
 Group Members: Matthew Dargan, Kayla Felderman, Kody Leuang, Danny Stutz, Forrest Musgrove
-
-Variation 2 Code
 
 This is a demo for Cozmo movement, speech, and animations.  Read through the sample code for examples of how to get Cozmo to move forward, speak, turn, and perform an animation.  Once you understand the code, think about how to accomplish the various challenges.  In class on Thursday, you will break up into groups, and either fork this repository (and name your fork based on the variation you are working on) or create a new repository and include information on your challenge.  These variations are designed to demonstrate ways to control Cozmo's movement, and may be useful in projects.
 
