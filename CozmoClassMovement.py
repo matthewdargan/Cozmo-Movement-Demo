@@ -52,7 +52,7 @@ def turnReverse(robot):
 	return
 
 def cozmo_program(robot: cozmo.robot.Robot):
-	cozmo_movement(robot, a = 0, b = 0, x = -400, y = 400)	
+	cozmo_movement(robot, a = 0, b = 0, x = 200, y = 200)	
 	return
 
 def cozmo_movement(robot: cozmo.robot.Robot,  x, y, a = 0, b = 0, animation = "anim_petdetection_dog_03"):
@@ -60,12 +60,12 @@ def cozmo_movement(robot: cozmo.robot.Robot,  x, y, a = 0, b = 0, animation = "a
 	y_mag = abs(y - b)
 
 	# Just go straight
-	if (x-a >= 0):
+	if (x-a > 0):
 		robot.say_text("I will drive forward one more time").wait_for_completed()
 		robot.drive_straight(cozmo.util.distance_mm(x_mag), cozmo.util.speed_mmps(150)).wait_for_completed()
 	
 	# Reverse
-	else:
+	elif (x-a < 0):
 		# Turn 180 degrees
 		turnReverse(robot)
 
@@ -77,7 +77,7 @@ def cozmo_movement(robot: cozmo.robot.Robot,  x, y, a = 0, b = 0, animation = "a
 		turnReverse(robot)
 	
 
-	if (y-b >= 0):
+	if (y-b > 0):
 		# Turn in the positive y-direction
 		turnLeft(robot)
 
@@ -87,7 +87,7 @@ def cozmo_movement(robot: cozmo.robot.Robot,  x, y, a = 0, b = 0, animation = "a
 		# Turn to face position direction
 		turnRight(robot)
 	
-	else:
+	elif (y-b < 0):
 		# Turn in the negative y-direction
 		turnRight(robot)
 
