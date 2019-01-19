@@ -58,7 +58,9 @@ def cozmo_program(robot: cozmo.robot.Robot):
 	return
 
 def cozmo_movement(robot: cozmo.robot.Robot,  x, y, a = 0, b = 0, animation = "anim_petdetection_dog_03"):
-	"""Move cozmo horizontally and then vertical given some original starting point and a desired final location.
+	"""Move cozmo horizontally and then vertically given some original starting point
+	and a desired final location where one unit in any given direction is defined as
+	one millimeter.
 
 	Keyword arguments:
 	robot -- the cozmo robot object
