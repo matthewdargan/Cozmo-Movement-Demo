@@ -1,3 +1,5 @@
+# Teammates: Matthew Dargan, Danny Stutz
+
 from CozmoClassMovement import turnLeft, turnRight
 import cozmo
 from cozmo.util import degrees, distance_mm
