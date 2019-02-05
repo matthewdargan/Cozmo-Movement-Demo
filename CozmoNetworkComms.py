@@ -10,12 +10,20 @@ def parseMessage(message: str):
     y = a whole number representing the number of millimeters to move either left or right
     """
 
+    valid1 = ['F', 'B']
+    valid2 = ['L', 'R']
+
     separated = message.split(';')
     separated[3] = int(separated[3]) # ensure x is a whole number
     separated[4] = int(separated[4]) # ensure y is a whole number
 
+    # check edge cases
     if len(separated) > 5:
         raise ValueError('Wrong number of elements passed in with the message string.')
+    elif separated[1] not in valid1:
+        raise ValueError('Invalid second value in message - it should be either F (forward) or B (backward).')
+    elif separated[2] not in valid2:
+        raise ValueError('Invalid third value in message - it should be either L (left) or R (right).')
     else:
         return separated
 
