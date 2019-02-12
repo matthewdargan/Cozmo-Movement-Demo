@@ -95,22 +95,17 @@ def cozmo_program(robot: cozmo.robot.Robot):
                     robot.say_text(instructions[0]).wait_for_completed()
                 elif len(instructions) == 3:
                     # this is where we move the tractor or the head
-                    # if the first value is greater than 0, move the head
-                    # if the second value is greater than 0, move the tractor arm
-                    instructions[1] = int(instructions[1])
-                    instructions[2] = int(instructions[2])
+                    head_angle = float(instructions[1])
+                    lift_arm = float(instructions[2])
+
+                    head_angle = max(-25, min(head_angle, 44.5))
+                    lift_arm = max(0, min(lift_arm, 1.0))
+
+                    robot.set_head_angle(degrees(head_angle)).wait_for_completed()
+                    robot.set_lift_height(lift_arm, in_parallel=True).wait_for_completed()
+
                     print(instructions)
-
-                    # change head angle
-                    if instructions[1] > 0:
-                        robot.set_head_angle(instructions[1])
-
-                    # change tractor arm angle
-                    if instructions[2] > 0:
-                        robot.set_lift_height(instructions[2])
                 
                 s.sendall(b"Done")
-                s.close()
-                quit()
 
 cozmo.run_program(cozmo_program)
