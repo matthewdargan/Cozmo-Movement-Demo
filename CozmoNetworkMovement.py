@@ -78,19 +78,29 @@ def cozmo_program(robot: cozmo.robot.Robot):
                         # just move forward
                         if instructions[1] == 'F':
                             robot.drive_straight(cozmo.util.distance_mm(instructions[3]), cozmo.util.speed_mmps(150)).wait_for_completed()
+
+                            if instructions[4] is not 0:
+                                # now handle left or right distance
+                                if instructions[2] == 'L':
+                                    robot.turn_in_place(cozmo.util.degrees(90)).wait_for_completed()
+                                    robot.drive_straight(cozmo.util.distance_mm(instructions[4]), cozmo.util.speed_mmps(150)).wait_for_completed()
+                                else:
+                                    robot.turn_in_place(cozmo.util.degrees(-90)).wait_for_completed()
+                                    robot.drive_straight(cozmo.util.distance_mm(instructions[4]), cozmo.util.speed_mmps(150)).wait_for_completed()
+
                         # reverse and then move forward
                         else:
                             robot.turn_in_place(cozmo.util.degrees(180)).wait_for_completed()
                             robot.drive_straight(cozmo.util.distance_mm(instructions[3]), cozmo.util.speed_mmps(150)).wait_for_completed()
-                    
-                    if instructions[4] is not 0:
-                        # now handle left or right distance
-                        if instructions[2] == 'L':
-                            robot.turn_in_place(cozmo.util.degrees(-90)).wait_for_completed()
-                            robot.drive_straight(cozmo.util.distance_mm(instructions[4]), cozmo.util.speed_mmps(150)).wait_for_completed()
-                        else:
-                            robot.turn_in_place(cozmo.util.degrees(90)).wait_for_completed()
-                            robot.drive_straight(cozmo.util.distance_mm(instructions[4]), cozmo.util.speed_mmps(150)).wait_for_completed()
+
+                            if instructions[4] is not 0:
+                                # now handle left or right distance
+                                if instructions[2] == 'L':
+                                    robot.turn_in_place(cozmo.util.degrees(-90)).wait_for_completed()
+                                    robot.drive_straight(cozmo.util.distance_mm(instructions[4]), cozmo.util.speed_mmps(150)).wait_for_completed()
+                                else:
+                                    robot.turn_in_place(cozmo.util.degrees(90)).wait_for_completed()
+                                    robot.drive_straight(cozmo.util.distance_mm(instructions[4]), cozmo.util.speed_mmps(150)).wait_for_completed()
 
                     robot.say_text(instructions[0]).wait_for_completed()
                 elif len(instructions) == 3:
