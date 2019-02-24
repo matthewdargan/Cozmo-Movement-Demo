@@ -1,4 +1,4 @@
-# Cozmo-Movement-Demo: Variation 2 and other Movement scripts
+# Cozmo-Movement-Demo: Variation 2
 
 Group Members: Matthew Dargan, Kayla Felderman, Kody Leuang, Danny Stutz, Forrest Musgrove
 
